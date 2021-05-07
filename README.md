@@ -11,7 +11,9 @@ In the bag-of-words approach (tf-idf vectors), We'll also explore various dimens
 **<u>Preprocessing and Dimension Reduction:</u>**
 In order to train classification models, we need to generate algorithm-interpretable features from the text in each document. There are many common methods to these ends, and we will explore two throughout this project. The first, TF-IDF, is known as a "bag-of-words" approach. We will use these features to train the majority of our models. The second retains the ordering-structure in documents, converting sequences of words into sequences of integers. Before generating either type of feature, we clean the text, eliminating "stop words", urls, etc.. Furthermore, tf-idf vectors tend to be large and sparse, so we implement linear and nonlinear dimension reduction techniques to generate the features that will be used for training.
 
-* `Text_Preprocessing.ipynb`: 
+* `Text_Preprocessing.ipynb`: Loads the Reuters dataset from the `nltk` module, cleans the data and generates TF-IDF vectors and sequence-of-integers vectors.
+
+* `tfidf_Dimension_Reduction.ipynb`: Loads TF-IDF and sequence-of-integers data from `Text_Preprocessing.ipynb` and performs dimension reduction using both linear (PCA) and nonlinear (ANN autoencoder), low-dimensional representations.
 
 **<u>Binary Relevance Models:</u>**
 For every considered base classifier (kNN, Gradient Boosted Trees, and SVMs), the corresponding binary relevance models are trained on both the separable PC scores and the autoencoder encodings generated in `Preprocessing and Dimension Reduction/tfidf_Dimension_Reduction.ipynb`. Additionally, we utilize both constant and learned threshold functions.
@@ -21,3 +23,5 @@ For every considered base classifier (kNN, Gradient Boosted Trees, and SVMs), th
 * `Gradient Boosted Trees Based/GBT_Based_Models.ipynb`: Loads preprocessed, dimension-reduced data and trains binary relevance models, using gradient boosted trees as the base models.
 
 * `SVM Based/SVM_Based_Models.ipynb`: Loads preprocessed, dimension-reduced data and trains binary relevance models, using support vector machines as the base models.
+
+**<u>ThresholdFunctionLearning:</u>**
