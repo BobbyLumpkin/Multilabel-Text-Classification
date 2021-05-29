@@ -1,0 +1,2 @@
+model_checkpoint_path: "FFNN_best"
+all_model_checkpoint_paths: "FFNN_best"
